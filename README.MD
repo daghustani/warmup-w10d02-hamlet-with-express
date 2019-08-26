@@ -1,154 +1,14 @@
 # Good Morrow!
 
-![:image](https://i0.wp.com/www.filmscouts.com/zgifclip/cannes97/hamlet.gif)
+![:image](https://media1.giphy.com/media/RZQIIUO9qrTRC/giphy.gif)
 
-> Is it Nobler in the mind to suffer rewriting each array as a object or to take Arms and convert them programmatically?
+> Is it Nobler in the mind to suffer rewriting arrays or to take Arms and convert them programmatically?
 
 # Act I
 
 ### Scene I
 
-Programmatically print out "O! the venerable [Actor] starred as Hamlet in [Year]"
-
-```js
-var hamlets = [
-  "Laurence Olivier, 1948",
-  "Grigori Kozintsev, 1964",
-  "Tony Richardson, 1969",
-  "Franco Zeffirelli, 1990",
-  "Kenneth Branagh, 1996",
-  "Michael Almereyda, 2000"
-];
-```
-
-### Scene II
-
-Programmatically convert the `hamlets` array into an array of arrays where the first element, name, is a string, and the second element, year, is an integer.
-
-Example expected transformation:
-```js
-var hamlets = [
-  "Laurence Olivier, 1948",
-  "Grigori Kozintsev, 1964",
-  "Michael Almereyda, 2000"
-]
-=>
-var hamlets = [
-  ["Laurence Olivier", 1948],
-  ["Grigori Kozintsev", 1964],
-  ["Michael Almereyda", 2000]
-]
-```
-
-### Scene III
-
-Programmatically convert the `hamlets` array of arrays into an array of objects where the keys are `name` and `year`
-
-Example expected transformation:
-```js
-var hamlets = [
-  ["Laurence Olivier", 1948],
-  ["Grigori Kozintsev", 1964],
-  ["Michael Almereyda", 2000]
-]
-=>
-var hamlets = [
-  {
-    name: "Laurence Olivier",
-    year: 1948
-  },
-  {
-    name: "Grigori Kozintsev",
-    year: 1964
-  },
-  {
-    name: "Michael Almereyda",
-    year: 2000
-  }
-]
-```
-
-### Scene IV
-
-Using the array of objects from Scene III, programmatically select all the Hamlets from the 1960's and assign them to an array called `swingin_hamlets`
-
-Example expected transformation:
-```js
-var hamlets = [
-  {
-    name: "Laurence Olivier",
-    year: 1948
-  },
-  {
-    name: "Grigori Kozintsev",
-    year: 1964
-  },
-  {
-    name: "Michael Almereyda",
-    year: 2000
-  }
-]
-=>
-var swingin_hamlets = [
-  {
-    name: "Grigori Kozintsev",
-    year: 1964
-  }
-]
-```
-
-### Scene V
-
-Using the array of objects from Scene III, programmatically select all the Hamlets from the 2000's and assign them to an array called `future_hamlets`
-
-Example expected transformation:
-```js
-var hamlets = [
-  {
-    name: "Laurence Olivier",
-    year: 1948
-  },
-  {
-    name: "Grigori Kozintsev",
-    year: 1964
-  },
-  {
-    name: "Michael Almereyda",
-    year: 2000
-  }
-]
-=>
-var future_hamlets = [
-  {
-    name: "Michael Almereyda",
-    year: 2000
-  }
-]
-```
-
-# Act II
-
-### Scene I
-Convert the following `quotes` array into an array of objects.
-Each object should have the keys `quote`, `play`, `act` and `scene`
-
-Example expected transformation:
-
-```js
-var quotes = [
-    ["To be, or not to be: that is the question", "Hamlet - (Act III, Scene I)."]
-];
-
-=>
-var quotes = [
-  {
-    quote: "To be, or not to be: that is the question",
-    play: "Hamlet",
-    act: "Act III",
-    scene: "Scene I"
-  }
-];
-```
+Using Express and the following array, create a `/hamlet/quotes` path that takes `act` and `scene` values as queries and send the correct quote!
 
 ```js
 var quotesArray = [
@@ -173,3 +33,28 @@ var quotesArray = [
   ["When sorrows come, they come not single spies, but in battalions", "Hamlet-(Act IV,Scene V)."]
 ];
 ```
+#### Example
+
+If the query for act was `I` and for scene was `II` then display `"A little more than kin, and less than kind"`
+
+
+<details>
+<summary>In case of struggle</summary>
+
+One approach is to try and separate your array elements into objects to make accessing it easier
+
+```js
+var quotes = [
+    ["To be, or not to be: that is the question", "Hamlet - (Act III, Scene I)."]
+];
+
+=>
+var quotes = [
+  {
+    quote: "To be, or not to be: that is the question",
+    act: "III",
+    scene: "I"
+  }
+];
+```
+</details>
